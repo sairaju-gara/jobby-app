@@ -22,7 +22,7 @@ const Profile = () => {
   const getprofile = async () => {
     setApiStatus(apiStatusConstants.apiLoadingView);
     const jwtToken = Cookies.get("jwt_token");
-    const apiurl = "http://localhost:4000/jobbyapp/profile";
+    const apiurl = `${import.meta.env.VITE_API_URL}/jobbyapp/profile`;
 
     const options = {
       method: "GET",

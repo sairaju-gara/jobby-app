@@ -44,6 +44,26 @@
   margin-bottom: 10px;
   border: none;
 }
+.auth-redirect-text {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 16px;
+  color: #e2e8f0;
+}
+
+.auth-redirect-link {
+  color: #60a5fa;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 4px;
+  transition: color 0.2s ease;
+}
+
+.auth-redirect-link:hover {
+  color: #93c5fd;
+  text-decoration: underline;
+}
+
 @media (max-width: 576px) {
   .input-ele {
     height: 26px;

@@ -74,14 +74,14 @@ class Jobs extends Component {
         {
           activeSalaryRangeId: newSalary,
         },
-        this.getJobDetails
+        this.getJobDetails,
       );
     } else {
       this.setState(
         {
           activeSalaryRangeId: "",
         },
-        this.getJobDetails
+        this.getJobDetails,
       );
     }
   };
@@ -106,16 +106,16 @@ class Jobs extends Component {
         (prev) => ({
           activeEmploymentTypeId: [...prev.activeEmploymentTypeId, newType],
         }),
-        this.getJobDetails
+        this.getJobDetails,
       );
     } else {
       this.setState(
         (prev) => ({
           activeEmploymentTypeId: prev.activeEmploymentTypeId.filter(
-            (each) => each !== newType
+            (each) => each !== newType,
           ),
         }),
-        this.getJobDetails
+        this.getJobDetails,
       );
     }
   };
@@ -127,7 +127,7 @@ class Jobs extends Component {
     const activeEmploymentTypeIdList = activeEmploymentTypeId.join(",");
     const jwtToken = Cookies.get("jwt_token");
 
-    const apiUrl = `http://localhost:4000/jobs/getJobsdata?employment_type=${activeEmploymentTypeIdList}&minimum_package=${activeSalaryRangeId}&search=${searchInput}`;
+    const apiUrl = `${import.meta.env.VITE_API_URL}/jobs/getJobsdata?employment_type=${activeEmploymentTypeIdList}&minimum_package=${activeSalaryRangeId}&search=${searchInput}`;
     const options = {
       method: "GET",
       headers: {

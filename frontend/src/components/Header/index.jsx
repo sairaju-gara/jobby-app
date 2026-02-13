@@ -1,14 +1,15 @@
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import { FaHome, FaBriefcase } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
-
 import "./index.css";
 
 const Header = () => {
   const navigate = useNavigate();
+  const [showPopup, setShowPopup] = useState(false);
 
-  const onLogout = () => {
+  const confirmLogout = () => {
     Cookies.remove("jwt_token");
     navigate("/login", { replace: true });
   };
@@ -23,6 +24,7 @@ const Header = () => {
             alt="website logo"
           />
         </Link>
+
         <ul className="nav-menu">
           <li className="nav-item">
             <Link to="/" className="home">
@@ -35,8 +37,13 @@ const Header = () => {
             </Link>
           </li>
         </ul>
+
         <li className="nav-item">
-          <button className="logout-btn" type="button" onClick={onLogout}>
+          <button
+            className="logout-btn"
+            type="button"
+            onClick={() => setShowPopup(true)}
+          >
             Logout
           </button>
         </li>
@@ -50,6 +57,7 @@ const Header = () => {
             alt="website logo"
           />
         </Link>
+
         <ul className="nav-menu">
           <li className="nav-item">
             <Link to="/" className="home">
@@ -62,12 +70,35 @@ const Header = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <button className="logout-btn" type="button" onClick={onLogout}>
+            <button
+              className="logout-btn"
+              type="button"
+              onClick={() => setShowPopup(true)}
+            >
               <FiLogOut size={22} />
             </button>
           </li>
         </ul>
       </nav>
+
+      {showPopup && (
+        <div className="popup-overlay">
+          <div className="popup-container">
+            <h3>Are you sure you want to logout?</h3>
+            <div className="popup-buttons">
+              <button
+                className="cancel-btn"
+                onClick={() => setShowPopup(false)}
+              >
+                Cancel
+              </button>
+              <button className="confirm-btn" onClick={confirmLogout}>
+                Confirm
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };

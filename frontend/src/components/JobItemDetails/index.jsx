@@ -28,7 +28,7 @@ const JobItemDetails = () => {
     setApiStatus(apiStatusConstants.apiLoadingView);
 
     const jwtToken = Cookies.get("jwt_token");
-    const apiUrl = `http://localhost:4000/jobs/${jobId}`;
+    const apiUrl = `${import.meta.env.VITE_API_URL}/jobs/${jobId}`;
 
     try {
       const res = await fetch(apiUrl, {

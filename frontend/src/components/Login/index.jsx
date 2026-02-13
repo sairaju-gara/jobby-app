@@ -14,12 +14,11 @@ const Login = () => {
 
   const onSubmitSuccess = (jwtToken) => {
     Cookies.set("jwt_token", jwtToken, { expires: 30 });
-
+    alert("User login successfully");
     setEmail("");
     setPassword("");
     setShowErrMsg(false);
     setErrorMsg("");
-    alert("User login successfully");
     navigate("/", { replace: true });
   };
 
@@ -31,7 +30,7 @@ const Login = () => {
   const submitForm = async (e) => {
     e.preventDefault();
 
-    const apiUrl = "http://localhost:4000/jobbyapp/login";
+    const apiUrl = `${import.meta.env.VITE_API_URL}/jobbyapp/login`;
 
     const userDetails = {
       email,
@@ -54,6 +53,16 @@ const Login = () => {
     } else {
       onSubmitFailure(data.errorMsg);
     }
+  };
+
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+    setShowErrMsg(false);
+  };
+
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
+    setShowErrMsg(false);
   };
 
   const jwtToken = Cookies.get("jwt_token");
@@ -79,7 +88,7 @@ const Login = () => {
             id="email"
             className="input-ele"
             type="text"
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={handleEmail}
             value={email}
             placeholder="E-Mail"
           />
@@ -94,19 +103,27 @@ const Login = () => {
             id="password"
             type="password"
             className="input-ele"
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={handlePassword}
             value={password}
             placeholder="Password"
           />
         </div>
 
-        <br />
+        {showErrMsg && <p className="error-msg">*{errorMsg}</p>}
 
         <button type="submit" className="login-btn">
           Login
         </button>
 
-        {showErrMsg && <p className="error-msg">*{errorMsg}</p>}
+        <p className="auth-redirect-text">
+          Don’t have an account?
+          <span
+            className="auth-redirect-link"
+            onClick={() => navigate("/register", { replace: true })}
+          >
+            Sign up
+          </span>
+        </p>
       </div>
     </form>
   );

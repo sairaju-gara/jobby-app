@@ -21,7 +21,7 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      const apiUrl = "http://localhost:4000/jobbyapp/register";
+      const apiUrl = `${import.meta.env.VITE_API_URL}/jobbyapp/register`;
 
       const userDetails = {
         username,
@@ -60,6 +60,26 @@ const Register = () => {
     }
   };
 
+  const handleUsername = (e) => {
+    setUsername(e.target.value);
+    setShowErrMsg(false);
+  };
+
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+    setShowErrMsg(false);
+  };
+
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
+    setShowErrMsg(false);
+  };
+
+  const handlePhoneNumber = (e) => {
+    setPhoneNumber(e.target.value);
+    setShowErrMsg(false);
+  };
+
   return (
     <form className="register-con" onSubmit={submitForm}>
       <div className="register-card">
@@ -78,13 +98,12 @@ const Register = () => {
             id="username"
             className="input-ele"
             type="text"
-            onChange={(e) => setUsername(e.target.value)}
+            onChange={handleUsername}
             value={username}
             placeholder="Username"
           />
         </div>
 
-        <br />
         <div>
           <label htmlFor="email" className="label-ele">
             E-MAIL
@@ -94,13 +113,11 @@ const Register = () => {
             id="email"
             className="input-ele"
             type="text"
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={handleEmail}
             value={email}
             placeholder="E-Mail"
           />
         </div>
-
-        <br />
 
         <div>
           <label htmlFor="password" className="label-ele">
@@ -111,13 +128,12 @@ const Register = () => {
             id="password"
             type="password"
             className="input-ele"
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={handlePassword}
             value={password}
             placeholder="Password"
           />
         </div>
 
-        <br />
         <div>
           <label htmlFor="phoneNumber" className="label-ele">
             PHONE NUMBER
@@ -127,19 +143,27 @@ const Register = () => {
             id="phoneNumber"
             className="input-ele"
             type="text"
-            onChange={(e) => setPhoneNumber(e.target.value)}
+            onChange={handlePhoneNumber}
             value={phoneNumber}
             placeholder="PhoneNumber"
           />
         </div>
 
-        <br />
+        {showErrMsg && <p className="error-msg">*{errorMsg}</p>}
 
         <button type="submit" className="register-btn">
           Register
         </button>
 
-        {showErrMsg && <p className="error-msg">*{errorMsg}</p>}
+        <p className="auth-redirect-text">
+          Already have an account?
+          <span
+            className="auth-redirect-link"
+            onClick={() => navigate("/login", { replace: true })}
+          >
+            Log in
+          </span>
+        </p>
       </div>
     </form>
   );
