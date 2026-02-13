@@ -1,0 +1,31 @@
+* {
+  color: white;
+  font-family: Roboto;
+}
+
+.employment-header {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.salaries-header {
+  font-size: 20px;
+  font-weight: 800;
+}
+.salary-list-item {
+  font-size: 18px;
+  list-style-type: none;
+  margin-bottom: 5px;
+}
+.employment-list-item {
+  font-size: 18px;
+  list-style-type: none;
+  margin-bottom: 5px;
+}
+.filter-group-con {
+  padding: 20px;
+}
+.categories-container {
+  margin: 0px;
+  padding: 0px;
+}

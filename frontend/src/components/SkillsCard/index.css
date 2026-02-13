@@ -1,0 +1,39 @@
+* {
+  color: white;
+  font-family: Roboto;
+}
+
+.skills-card {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+.skill-name {
+  font-size: 15px;
+}
+
+.skill-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 10px;
+}
+
+@media (max-width: 576px) {
+  .skills-card {
+    width: 40%;
+    margin-right: 14px;
+    margin-bottom: 15px;
+    margin-left: 0px;
+  }
+
+  .skill-name {
+    font-size: 13px;
+  }
+
+  .skill-img {
+    height: 48px;
+    width: 48px;
+    margin-right: 10px;
+  }
+}

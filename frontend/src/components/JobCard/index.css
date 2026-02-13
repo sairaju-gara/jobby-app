@@ -1,0 +1,58 @@
+* {
+  color: white;
+  font-family: Roboto;
+}
+.job-con {
+  list-style-type: none;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 10px;
+  background-color: #64748b;
+  width: 80%;
+}
+.role-con {
+  display: flex;
+  align-items: center;
+}
+.role {
+  font-size: 20px;
+  font-weight: 800;
+}
+.vaccancies {
+  font-size: 20px;
+  font-weight: 800;
+}
+.company-logo {
+  height: 60px;
+  width: 60px;
+  margin-right: 10px;
+}
+.location-salary-details {
+  font-size: 13px;
+  margin-right: 10px;
+}
+.icons {
+  height: 20px;
+  width: 20px;
+}
+.location-salary-con {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.job-desc {
+  font-size: 13px;
+}
+.desc {
+  font-size: 20px;
+  font-weight: 800;
+}
+.location-employmentType {
+  display: flex;
+}
+@media (max-width: 576px) {
+  .location-salary-details {
+    font-size: 30px;
+  }
+}

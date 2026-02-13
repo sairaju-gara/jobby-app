@@ -1,0 +1,71 @@
+* {
+  font-family: Roboto;
+  color: white;
+}
+
+.register-con {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000000;
+}
+.register-card {
+  padding: 29px;
+  background-color: #475569;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.app-logo {
+  height: 50px;
+  width: 150px;
+  align-self: center;
+  margin-bottom: 20px;
+}
+.label-ele {
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+.input-ele {
+  height: 30px;
+  width: 300px;
+  border-radius: 6px;
+  border: 1px solid white;
+  background-color: transparent;
+  margin-bottom: 10px;
+}
+.register-btn {
+  height: 30px;
+  width: 300px;
+  border-radius: 6px;
+  background-color: #4f46e5;
+  margin-bottom: 10px;
+  border: none;
+}
+@media (max-width: 576px) {
+  .input-ele {
+    height: 26px;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid white;
+    background-color: transparent;
+    margin-bottom: 10px;
+  }
+
+  .register-btn {
+    height: 26px;
+    width: 200px;
+    border-radius: 5px;
+    background-color: #4f46e5;
+    margin-bottom: 10px;
+    border: none;
+  }
+}
+
+.error-msg {
+  font-size: 10px;
+  color: red;
+  align-self: flex-start;
+}

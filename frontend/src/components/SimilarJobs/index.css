@@ -1,0 +1,67 @@
+.similar-job-container {
+  padding: 20px;
+  border-radius: 10px;
+  margin-right: 10px;
+  background-color: #64748b;
+  list-style-type: none;
+  flex: 0 0 300px;
+  height: 340px;
+}
+.role-con {
+  display: flex;
+  align-items: center;
+}
+.role {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.vaccancies {
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0;
+  padding: 0;
+}
+.company-logo {
+  height: 60px;
+  width: 60px;
+  margin-right: 12px;
+}
+.similar-job-desc {
+  font-size: 14px;
+  line-height: 1.4;
+  overflow-y: auto;
+  max-height: 60px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.job-desc::-webkit-scrollbar {
+  display: none;
+}
+.view-less-job-desc {
+  font-size: 14px;
+  line-height: 1.4;
+  line-clamp: 3;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* show only 3 lines */
+  -webkit-box-orient: vertical;
+}
+
+.desc {
+  font-size: 20px;
+  font-weight: 800;
+}
+.view-btn {
+  background: none;
+  border: none;
+  color: #0d03d1;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 6px;
+}
+@media (max-width: 767px) {
+  .similar-job-container {
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,41 @@
+* {
+  color: white;
+  font-family: Roboto;
+}
+
+.not-found-con {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000000;
+}
+.not-found-img {
+  height: 300px;
+  width: 300px;
+}
+.not-found-header {
+  font-size: 26px;
+}
+.not-found-msg {
+  font-size: 20px;
+}
+@media (max-width: 576px) {
+  .not-found-con {
+    padding: 20px;
+  }
+  .not-found-img {
+    height: 200px !important;
+    width: 250px !important;
+    text-align: center;
+  }
+  .not-found-header {
+    font-size: 22px;
+    text-align: center;
+  }
+  .not-found-msg {
+    font-size: 18px;
+    text-align: center;
+  }
+}
